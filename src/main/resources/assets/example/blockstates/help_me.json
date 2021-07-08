@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "example:block/help_me" }
+  }
+}
