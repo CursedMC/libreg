@@ -1,6 +1,9 @@
+import com.modrinth.minotaur.TaskModrinthUpload
+
 plugins {
 	id("org.jetbrains.kotlin.jvm") version "1.5.0"
 	id("fabric-loom") version "0.8-SNAPSHOT"
+	id("com.modrinth.minotaur") version "1.2.1"
 	`maven-publish`
 }
 
@@ -12,6 +15,8 @@ val fabricVersion: String by project
 val modVersion: String by project
 val mavenGroup: String by project
 val fabricKotlinVersion: String by project
+val modLoader: String by project
+val modrinthId: String by project
 
 base.archivesBaseName = modId
 version = modVersion
@@ -98,4 +103,16 @@ tasks.processResources {
 	filesMatching("fabric.mod.json") {
 		expand("version" to project.version)
 	}
+}
+
+tasks.register("publishModrinth", TaskModrinthUpload::class) {
+	onlyIf {
+		System.getenv("MODRINTH") != null
+	}
+	
+	token = System.getenv("MODRINTH")
+	projectId = modrinthId
+	uploadFile = tasks.remapJar
+	addGameVersion(minecraftVersion)
+	addLoader(modLoader)
 }
