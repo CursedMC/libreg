@@ -87,5 +87,5 @@ object ExampleBlocks {
 	)
 	
 	/* no-op */
-	fun initialize() {}
+	fun initialize() = Unit
 }

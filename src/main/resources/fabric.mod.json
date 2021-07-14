@@ -21,6 +21,7 @@
       "dev.tehc.libreg.Mod::main"
     ],
     "client": [
+      "dev.tehc.libreg.client.ModClient::main"
     ],
     "server": [
     ]

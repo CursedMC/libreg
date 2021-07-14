@@ -34,5 +34,5 @@ object ExampleItems {
 	)
 	
 	/* no-op */
-	fun initialize() {}
+	fun initialize() = Unit
 }

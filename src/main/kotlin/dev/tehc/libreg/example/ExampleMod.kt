@@ -1,26 +1,25 @@
 package dev.tehc.libreg.example
 
 import dev.tehc.libreg.example.block.ExampleBlocks
+import dev.tehc.libreg.example.block.entity.ExampleBlockEntities
 import dev.tehc.libreg.example.item.ExampleItems
 import dev.tehc.libreg.registry.init
 
 object ExampleMod {
-	internal const val id = "example"
+	private const val id = "example"
 	
 	internal fun main() {
 		init(id)
 		
 		ExampleBlocks.initialize()
 		ExampleItems.initialize()
-		registerEntities()
+		ExampleBlockEntities.initialize()
 		registerDimensions()
 		registerRecipes()
 		registerEffects()
 		registerStructure()
 		registerBiome()
 	}
-	
-	private fun registerEntities() {}
 	
 	private fun registerDimensions() {}
 	
