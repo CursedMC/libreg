@@ -24,6 +24,8 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
+      - name: set environment variables
+        run: export GITHUB_ACTIONS="prospector pls fix"
       - name: build
         run: ./gradlew build
       - name: capture build artifacts
