@@ -5,12 +5,16 @@ jobs:
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     strategy:
       matrix:
-        java: [jdk16]
-    runs-on: ubuntu-20.04
-    container:
-      image: openjdk:${{ matrix.java }}
-      options: --user root
+        os: [ubuntu-latest] # TODO: add windows/mac support
+    runs-on: ${{matrix.os}}
     steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.1.0
+        with:
+          # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+          java-version: 16
+          # Java distribution. See the list of supported distributions in README file
+          distribution: openjdk
       - name: checkout repository
         uses: actions/checkout@v2
       - name: validate gradle wrapper
