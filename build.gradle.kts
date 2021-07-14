@@ -43,9 +43,12 @@ repositories {
 		url = uri("https://maven.shedaniel.me/")
 	}
 	
-	maven {
-		name = "TerraformersMC"
-		url = uri("https://maven.terraformersmc.com/")
+	// temporary cursed gradle hack for github actions. don't forget to remove this when prospector fixes it!
+	if (System.getenv("GITHUB_ACTIONS") == null) {
+		maven {
+			name = "TerraformersMC"
+			url = uri("https://maven.terraformersmc.com/")
+		}
 	}
 
 	maven {
