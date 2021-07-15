@@ -26,7 +26,7 @@ class TestBlockEntityRenderer(private val renderManager: BlockRenderManager) : B
 			offset = Vec3d(
 				Random.nextDouble(-maxOffset, maxOffset),
 				Random.nextDouble(-maxOffset, maxOffset),
-				Random.nextDouble(-maxOffset, maxOffset)
+				Random.nextDouble(-maxOffset, maxOffset),
 			)
 			translationTime = System.currentTimeMillis()
 		}
@@ -57,7 +57,7 @@ class TestBlockEntityRenderer(private val renderManager: BlockRenderManager) : B
 		internal var offset = Vec3d(
 			Random.nextDouble(-maxOffset, maxOffset),
 			Random.nextDouble(-maxOffset, maxOffset),
-			Random.nextDouble(-maxOffset, maxOffset)
+			Random.nextDouble(-maxOffset, maxOffset),
 		)
 		// When the offset was last updated
 		private var translationTime = System.currentTimeMillis()
@@ -68,7 +68,7 @@ class TestBlockEntityRenderer(private val renderManager: BlockRenderManager) : B
 object ExampleBlockEntityRenderers {
 	val test_renderer = blockEntityRenderer(
 		{ TestBlockEntityRenderer(it.renderManager) },
-		ExampleBlockEntities.test_type
+		ExampleBlockEntities.test_type,
 	)
 	
 	/* no-op */
