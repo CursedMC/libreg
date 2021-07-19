@@ -122,5 +122,5 @@ tasks.register("publishModrinth", TaskModrinthUpload::class) {
 	addLoader(modLoader)
 	versionType = VersionType.valueOf(verType)
 	versionNumber = version as String
-	versionName = "$name ${versionNumber.split('+')[0]} for Minecraft $minecraftVersion"
+	versionName = "${rootProject.name} ${versionNumber.split('+')[0]} for Minecraft $minecraftVersion"
 }.get().dependsOn(tasks.build.get())
