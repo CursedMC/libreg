@@ -38,7 +38,8 @@ fun blockItem(id: String, block: Block, itemSettings: FabricItemSettings): Pair<
 }
 
 fun blockItem(id: String, blockSettings: FabricBlockSettings, itemSettings: FabricItemSettings): Pair<Block, BlockItem> {
-	return blockItem(id, block(id, blockSettings), itemSettings)
+	val block = Block(blockSettings)
+	return blockItem(id, block, itemSettings)
 }
 
 fun blockItem(id: String, renderLayer: RenderLayer, block: Block, itemSettings: FabricItemSettings): Pair<Block, BlockItem> {
@@ -46,5 +47,7 @@ fun blockItem(id: String, renderLayer: RenderLayer, block: Block, itemSettings: 
 }
 
 fun blockItem(id: String, renderLayer: RenderLayer, blockSettings: FabricBlockSettings, itemSettings: FabricItemSettings): Pair<Block, BlockItem> {
-	return blockItem(id, block(id, renderLayer, blockSettings), itemSettings)
+	val block = Block(blockSettings)
+	renderLayer(block, renderLayer)
+	return blockItem(id, block, itemSettings)
 }
