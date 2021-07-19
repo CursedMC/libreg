@@ -18,6 +18,7 @@ val mavenGroup: String by project
 val fabricKotlinVersion: String by project
 val modLoader: String by project
 val modrinthId: String by project
+val verType: String by project
 
 base.archivesBaseName = modId
 version = modVersion
@@ -116,11 +117,10 @@ tasks.register("publishModrinth", TaskModrinthUpload::class) {
 	
 	token = System.getenv("MODRINTH")
 	projectId = modrinthId
-//	uploadFile = tasks.remapJar
 	uploadFile = tasks.remapJar.get().archiveFile.get().asFile
 	addGameVersion(minecraftVersion)
 	addLoader(modLoader)
-	versionType = VersionType.ALPHA
+	versionType = VersionType.valueOf(verType)
 	versionNumber = version as String
 	versionName = "$name ${versionNumber.split('+')[0]} for Minecraft $minecraftVersion"
 }.get().dependsOn(tasks.build.get())
