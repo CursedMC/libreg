@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "libreg",
-  "description": "",
+  "description": "A tiny Kotlin library for registering blocks, items, biomes, dimensions, etc.",
   "authors": [
     "Tehc"
   ],
