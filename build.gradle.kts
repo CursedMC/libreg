@@ -1,4 +1,5 @@
 import com.modrinth.minotaur.TaskModrinthUpload
+import com.modrinth.minotaur.request.VersionType
 
 plugins {
 	id("org.jetbrains.kotlin.jvm") version "1.5.0"
@@ -119,5 +120,7 @@ tasks.register("publishModrinth", TaskModrinthUpload::class) {
 	uploadFile = tasks.remapJar.get().archiveFile.get().asFile
 	addGameVersion(minecraftVersion)
 	addLoader(modLoader)
-	
+	versionType = VersionType.ALPHA
+	versionNumber = version as String
+	versionName = "$name ${versionNumber.split('+')[0]} for Minecraft $minecraftVersion"
 }.get().dependsOn(tasks.build.get())
