@@ -115,7 +115,9 @@ tasks.register("publishModrinth", TaskModrinthUpload::class) {
 	
 	token = System.getenv("MODRINTH")
 	projectId = modrinthId
-	uploadFile = tasks.remapJar
+//	uploadFile = tasks.remapJar
+	uploadFile = tasks.remapJar.get().archiveFile.get().asFile
 	addGameVersion(minecraftVersion)
 	addLoader(modLoader)
-}
+	
+}.get().dependsOn(tasks.build.get())
