@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "libreg",
   "version": "${version}",
-
   "name": "libreg",
   "description": "A tiny Kotlin library for registering blocks, items, biomes, dimensions, etc.",
   "authors": [
@@ -11,10 +10,8 @@
   "contact": {
     "sources": "https://github.com/CursedMC/libreg"
   },
-
-  "license": "Apache-2.0",
+  "license": "LGPLv3",
   "icon": "assets/libreg/icon.png",
-
   "entrypoints": {
     "main": [
       "dev.tehc.libreg.Mod::main"
@@ -29,9 +26,9 @@
     "libreg.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11",
+    "fabricloader": ">=0.13",
     "fabric": ">=0.36",
     "fabric-language-kotlin": "*",
-    "minecraft": "1.17.x"
+    "minecraft": "~1.18.2"
   }
 }
