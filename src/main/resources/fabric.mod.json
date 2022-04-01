@@ -6,7 +6,7 @@
   "name": "libreg",
   "description": "A tiny Kotlin library for registering blocks, items, biomes, dimensions, etc.",
   "authors": [
-    "Tehc"
+    "Sylv"
   ],
   "contact": {
     "sources": "https://github.com/CursedMC/libreg"
