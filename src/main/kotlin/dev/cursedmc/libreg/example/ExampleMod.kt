@@ -3,13 +3,13 @@ package dev.cursedmc.libreg.example
 import dev.cursedmc.libreg.example.block.ExampleBlocks
 import dev.cursedmc.libreg.example.block.entity.ExampleBlockEntities
 import dev.cursedmc.libreg.example.item.ExampleItems
-import dev.cursedmc.libreg.registry.init
+import dev.cursedmc.libreg.registry.ns
 
 object ExampleMod {
 	private const val id = "example"
 	
 	fun init() {
-		init(id)
+		ns(id)
 		
 		ExampleBlocks.initialize()
 		ExampleItems.initialize()

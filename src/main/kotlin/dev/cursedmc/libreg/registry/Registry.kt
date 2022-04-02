@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier
 
 var namespace: String = "minecraft"
 
-fun init(ns: String) {
+fun ns(ns: String) {
 	namespace = ns
 }
 
