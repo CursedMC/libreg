@@ -1,4 +1,2 @@
- - Update package name from `dev.tehc.libreg` to `dev.cursedmc.libreg`
- - Use new `BlockEntityRendererRegistry` in Fabric API
-   - Remove usage of `BlockEntityRendererRegistry`
- - Suppress warnings for "Unused" in API items
+ - Hotfix
+   - Mixin no longer crashes due to invalid package
