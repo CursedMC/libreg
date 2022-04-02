@@ -1,3 +1,1 @@
- - Hotfix
-   - Mixin no longer crashes due to invalid package
-   - Fabric Loader no longer crashes due to `java.lang.ClassNotFoundException: dev.tehc.libreg.ModKt`
+ - Change namespace initialization (`init`) to `ns`
