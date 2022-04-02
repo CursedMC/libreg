@@ -13,6 +13,8 @@ import net.minecraft.util.registry.Registry
 // cursed wet code
 // i swear this is the cleanest way
 
+// Excuse me? - Sylv (4/1/22, 22:46)
+
 fun block(id: String, block: Block): Block {
 	return Registry.register(Registry.BLOCK, ident(id), block)
 }
