@@ -3,7 +3,7 @@ import com.modrinth.minotaur.request.VersionType
 
 plugins {
 	id("org.jetbrains.kotlin.jvm") version "1.5.0"
-	id("fabric-loom") version "0.8-SNAPSHOT"
+	id("fabric-loom") version "0.11-SNAPSHOT"
 	id("com.modrinth.minotaur") version "1.2.1"
 	`maven-publish`
 }
@@ -45,12 +45,13 @@ repositories {
 		url = uri("https://maven.shedaniel.me/")
 	}
 	
-	// temporary cursed gradle hack for github actions. don't forget to remove this when prospector fixes it!
-	if (System.getenv("GITHUB_ACTIONS") == null) {
-		maven {
-			name = "TerraformersMC"
-			url = uri("https://maven.terraformersmc.com/")
-		}
+//	// temporary cursed gradle hack for github actions. don't forget to remove this when prospector fixes it!
+//	if (System.getenv("GITHUB_ACTIONS") == null) {
+//
+//	}
+	maven {
+		name = "TerraformersMC"
+		url = uri("https://maven.terraformersmc.com/")
 	}
 
 	maven {
@@ -73,10 +74,10 @@ dependencies {
 	if (!file("ignoreruntime.txt").exists()) {
 		println("Setting up runtimes...")
 		
-		modRuntime("com.terraformersmc", "modmenu", "2.0.2")
-		modRuntime("mcp.mobius.waila", "wthit", "fabric-3.6.1")
-		modRuntime("me.shedaniel", "RoughlyEnoughItems-fabric", "6.0.262-alpha")
-//		modRuntime("com.github.mikroskeem", "WorldEditCUI", "mc~1.17-SNAPSHOT")
+		modRuntimeOnly("com.terraformersmc", "modmenu", "3.1.0")
+		modRuntimeOnly("mcp.mobius.waila", "wthit", "fabric-4.8.0")
+		modRuntimeOnly("me.shedaniel", "RoughlyEnoughItems-fabric", "8.0.442")
+//		modRuntimeOnly("com.github.mikroskeem", "WorldEditCUI", "mc~1.17-SNAPSHOT")
 	}
 
 	add(sourceSets.main.get().getTaskName("mod", JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME), modImplementationInclude)
@@ -84,8 +85,8 @@ dependencies {
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_16
-	targetCompatibility = JavaVersion.VERSION_16
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 }
 
 publishing {
@@ -97,7 +98,7 @@ publishing {
 tasks.withType<JavaCompile> {
 	options.encoding = "UTF-8"
 
-	options.release.set(16)
+	options.release.set(17)
 }
 
 tasks.withType<AbstractArchiveTask> {
