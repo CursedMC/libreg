@@ -3,6 +3,7 @@ package dev.tehc.libreg.example.block
 import dev.tehc.libreg.example.item.group.ExampleGroups
 import dev.tehc.libreg.registry.block.BlockPredicates
 import dev.tehc.libreg.registry.block.blockItem
+import dev.tehc.libreg.registry.block.renderLayer
 import dev.tehc.libreg.text.text
 import dev.tehc.libreg.text.transText
 import dev.tehc.libreg.util.math.tickSeconds
@@ -30,6 +31,15 @@ import net.minecraft.world.World
  */
 @Suppress("unused")
 object ExampleBlocks {
+	object Client {
+		init {
+			renderLayer(REFACTOR.first, RenderLayer.getCutout())
+		}
+		
+		/* no-op */
+		fun initialize() = Unit
+	}
+	
 	val HELP_ME = blockItem(
 		"help_me",
 		object : SlimeBlock(
@@ -50,7 +60,6 @@ object ExampleBlocks {
 	)
 	val REFACTOR = blockItem(
 		"refactor",
-		RenderLayer.getCutout(),
 		object : Block(
 			FabricBlockSettings
 				.of(Material.LEAVES)

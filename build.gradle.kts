@@ -1,9 +1,11 @@
+@file:Suppress("DEPRECATION")
+
 import com.modrinth.minotaur.TaskModrinthUpload
 import com.modrinth.minotaur.request.VersionType
 
 plugins {
 	id("org.jetbrains.kotlin.jvm") version "1.5.0"
-	id("fabric-loom") version "0.11-SNAPSHOT"
+	id("fabric-loom") version "0.11.+"
 	id("com.modrinth.minotaur") version "1.2.1"
 	`maven-publish`
 }
@@ -69,7 +71,7 @@ dependencies {
 	modImplementation("net.fabricmc.fabric-api", "fabric-api", fabricVersion)
 	modImplementation("net.fabricmc", "fabric-language-kotlin", fabricKotlinVersion)
 
-	modImplementationInclude("net.devtech", "grossfabrichacks", "6.1")
+//	modImplementationInclude("net.devtech", "grossfabrichacks", "6.1")
 
 	if (!file("ignoreruntime.txt").exists()) {
 		println("Setting up runtimes...")

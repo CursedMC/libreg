@@ -68,7 +68,7 @@ class TestBlockEntityRenderer(private val renderManager: BlockRenderManager) : B
 object ExampleBlockEntityRenderers {
 	val test_renderer = blockEntityRenderer(
 		{ TestBlockEntityRenderer(it.renderManager) },
-		ExampleBlockEntities.test_type,
+		ExampleBlockEntities.TEST_TYPE,
 	)
 	
 	/* no-op */

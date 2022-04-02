@@ -5,16 +5,13 @@ import dev.tehc.libreg.util.debug
 import dev.tehc.libreg.util.info
 import net.fabricmc.loader.api.FabricLoader
 
-@Suppress("unused")
-object Mod {
-	internal const val id = "libreg"
+internal const val MOD_ID = "libreg"
+
+fun init() {
+	info("$MOD_ID started!")
 	
-	private fun main() {
-		info("$id started!")
-		
-		if (FabricLoader.getInstance().isDevelopmentEnvironment) {
-			debug("Initializing tests...")
-			ExampleMod.main()
-		}
+	if (FabricLoader.getInstance().isDevelopmentEnvironment) {
+		debug("Initializing tests...")
+		ExampleMod.init()
 	}
 }

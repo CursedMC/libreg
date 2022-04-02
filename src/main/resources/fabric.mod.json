@@ -14,10 +14,10 @@
   "icon": "assets/libreg/icon.png",
   "entrypoints": {
     "main": [
-      "dev.tehc.libreg.Mod::main"
+      "dev.tehc.libreg.ModKt::init"
     ],
     "client": [
-      "dev.tehc.libreg.client.ModClient::main"
+      "dev.tehc.libreg.client.ModClientKt::initClient"
     ],
     "server": [
     ]

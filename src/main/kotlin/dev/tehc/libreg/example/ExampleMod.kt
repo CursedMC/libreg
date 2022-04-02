@@ -8,7 +8,7 @@ import dev.tehc.libreg.registry.init
 object ExampleMod {
 	private const val id = "example"
 	
-	internal fun main() {
+	fun init() {
 		init(id)
 		
 		ExampleBlocks.initialize()

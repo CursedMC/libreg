@@ -2,11 +2,11 @@
 
 package dev.tehc.libreg.util
 
-import dev.tehc.libreg.Mod
+import dev.tehc.libreg.MOD_ID
 import org.apache.logging.log4j.LogManager
 
 
-private val logger = LogManager.getLogger(Mod.id)!!
+private val logger = LogManager.getLogger(MOD_ID)!!
 
 internal fun info(msg: String) = logger.info(msg)
 

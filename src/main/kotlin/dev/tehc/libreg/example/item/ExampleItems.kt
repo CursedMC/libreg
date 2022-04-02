@@ -14,7 +14,9 @@ import net.minecraft.util.Rarity
  * Items
  * @author Tehc
  */
+@Suppress("unused")
 object ExampleItems {
+	@Suppress("SpellCheckingInspection")
 	val MOJANK = item(
 		"mojank",
 		object : Item(
