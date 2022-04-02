@@ -1,0 +1,3 @@
+ - Major bug fixes
+   - Server no longer crashes when loading (due to NoClassDefFoundError)
+ - Removed RenderLayer from overloaded arguments in `block`, `blockItem`, and `blockEntity`.
