@@ -27,6 +27,7 @@ object ExampleBlockEntities {
 	}
 	
 	private const val TEST_ID = "test_block"
+	@Suppress("OVERRIDE_DEPRECATION")
 	val TEST_BLOCK: Pair<Block, BlockItem> = blockItem(TEST_ID,
 		object : BlockWithEntity(
 			FabricBlockSettings
