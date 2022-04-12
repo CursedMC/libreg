@@ -6,7 +6,10 @@ import dev.cursedmc.libreg.registry.block.entity.blockEntityType
 import dev.cursedmc.libreg.registry.block.renderLayer
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.block.*
+import net.minecraft.block.Block
+import net.minecraft.block.BlockState
+import net.minecraft.block.BlockWithEntity
+import net.minecraft.block.Material
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.client.render.RenderLayer
 import net.minecraft.item.BlockItem
@@ -37,16 +40,12 @@ object ExampleBlockEntities {
 			override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity {
 				return TestBlockEntity(pos, state)
 			}
-			
-			override fun getRenderType(state: BlockState): BlockRenderType {
-				return BlockRenderType.INVISIBLE
-			}
 		},
 		FabricItemSettings()
 			.rarity(Rarity.EPIC)
 			.group(ExampleGroups.MOD),
 	)
-	val TEST_TYPE = blockEntityType(TEST_ID, ::TestBlockEntity, TEST_BLOCK.first as BlockWithEntity)
+	val TEST_TYPE = blockEntityType(TEST_ID, ::TestBlockEntity, TEST_BLOCK.first)
 	
 	/* no-op */
 	fun initialize() = Unit
