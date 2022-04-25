@@ -1,1 +1,1 @@
- - It is now no longer required to pass a `BlockWithEntity` when registering a `BlockEntity`. Pass a `Block` now.
+- Rewrite
