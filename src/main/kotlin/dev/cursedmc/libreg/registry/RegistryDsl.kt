@@ -48,4 +48,11 @@ class RegistryDsl(val modid: String) {
         }
     }
     fun blockEntityType(lambda: BlockEntityDsl.() -> Unit) = BlockEntityDsl(modid).apply(lambda)
+
+    class EnchantmentDsl(val modid: String) {
+        fun register(block: BlockEntityType<*>, path: String) {
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, Identifier(modid, path), block);
+        }
+    }
+    fun enchantment(lambda: EnchantmentDsl.() -> Unit) = EnchantmentDsl(modid).apply(lambda)
 }
