@@ -8,8 +8,11 @@ import net.minecraft.potion.Potion
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
+
+// Base function for Registry DSL
 fun registry(modid: String, lambda: RegistryDsl.() -> Unit) = RegistryDsl(modid).apply(lambda)
 
+// Holder class for the DSL
 class RegistryDsl(val modid: String) {
     class BlockDsl(val modid: String) {
         fun register(block: Block, path: String) {
@@ -45,24 +48,4 @@ class RegistryDsl(val modid: String) {
         }
     }
     fun blockEntityType(lambda: BlockEntityDsl.() -> Unit) = BlockEntityDsl(modid).apply(lambda)
-}
-
-fun test() {
-    registry("test") {
-        block {
-
-        }
-        item {
-
-        }
-        statusEffect {
-
-        }
-        potion {
-
-        }
-        blockEntityType {
-
-        }
-    }
 }
