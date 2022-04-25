@@ -13,14 +13,6 @@
   "license": "LGPLv3",
   "icon": "assets/libreg/icon.png",
   "entrypoints": {
-    "main": [
-      "dev.cursedmc.libreg.ModKt::init"
-    ],
-    "client": [
-      "dev.cursedmc.libreg.client.ModClientKt::initClient"
-    ],
-    "server": [
-    ]
   },
   "mixins": [
     "libreg.mixins.json"

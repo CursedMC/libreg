@@ -1,12 +1,12 @@
 @file:Suppress("DEPRECATION")
 
-import com.modrinth.minotaur.TaskModrinthUpload
-import com.modrinth.minotaur.request.VersionType
+//import com.modrinth.minotaur.TaskModrinthUpload
+//import com.modrinth.minotaur.request.VersionType
 
 plugins {
 	id("org.jetbrains.kotlin.jvm") version "1.5.0"
-	id("fabric-loom") version "0.11.+"
-	id("com.modrinth.minotaur") version "1.2.1"
+	id("fabric-loom") version "0.12.+"
+	//id("com.modrinth.minotaur") version "1.2.1"
 	`maven-publish`
 }
 
@@ -115,19 +115,19 @@ tasks.processResources {
 	}
 }
 
-tasks.register("publishModrinth", TaskModrinthUpload::class) {
-	onlyIf {
-		System.getenv("MODRINTH") != null
-	}
-	
-	token = System.getenv("MODRINTH")
-	projectId = modrinthId
-	uploadFile = tasks.remapJar.get().archiveFile.get().asFile
-	addGameVersion(minecraftVersion)
-	addLoader(modLoader)
-	versionType = VersionType.valueOf(verType)
-	versionNumber = version as String
-//	versionName = "${rootProject.name} ${versionNumber.split('+')[0]} for Minecraft $minecraftVersion"
-	versionName = File("./modrinth/name.txt").readText()
-	changelog = File("./modrinth/CHANGELOG.md").readText()
-}.get().dependsOn(tasks.build.get())
+//tasks.register("publishModrinth", TaskModrinthUpload::class) {
+//	onlyIf {
+//		System.getenv("MODRINTH") != null
+//	}
+//
+//	token = System.getenv("MODRINTH")
+//	projectId = modrinthId
+//	uploadFile = tasks.remapJar.get().archiveFile.get().asFile
+//	addGameVersion(minecraftVersion)
+//	addLoader(modLoader)
+//	versionType = VersionType.valueOf(verType)
+//	versionNumber = version as String
+////	versionName = "${rootProject.name} ${versionNumber.split('+')[0]} for Minecraft $minecraftVersion"
+//	versionName = File("./modrinth/name.txt").readText()
+//	changelog = File("./modrinth/CHANGELOG.md").readText()
+//}.get().dependsOn(tasks.build.get())
